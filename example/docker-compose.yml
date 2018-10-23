@@ -2,8 +2,7 @@ version: '2'
 
 services:
   weblog:
-    build:
-      context: ../
+    image: tarvainen/docker-weblog:latest
     ports:
       - 12201:12201/udp
       - 3456:3456
