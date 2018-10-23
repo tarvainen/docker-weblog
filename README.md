@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tarvainen/docker-weblog.svg?branch=master)](https://travis-ci.org/tarvainen/docker-weblog)
+
 # Docker WebLog
 
 Send your `docker logs` to your web browser console!
