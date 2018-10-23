@@ -1,5 +1,5 @@
 {
-  "name": "tarvainen/docker-weblog",
+  "name": "@tarvainen/docker-weblog",
   "version": "0.0.1",
   "description": "Get Docker logs to web browser",
   "main": "index.js",
@@ -17,7 +17,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "4.16.4",
-    "gelf": "2.0.1",
     "graygelf": "1.2.0",
     "socket.io": "2.1.1"
   }
