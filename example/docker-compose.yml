@@ -1,0 +1,40 @@
+version: '2'
+
+services:
+  weblog:
+    build:
+      context: ../
+    ports:
+      - 12201:12201/udp
+      - 3456:3456
+
+  my-awesome-app-frontend:
+    image: nginx:latest
+    volumes:
+      - ./my-awesome-app:/usr/share/nginx/html:ro
+    ports:
+      - 3000:80
+
+  my-awesome-worker-1:
+    image: node:10
+    volumes:
+      - ./my-awesome-app:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: node index.js
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        tag: my-awesome-worker-1
+
+  my-awesome-worker-2:
+    image: node:10
+    volumes:
+      - ./my-awesome-app:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: node index.js
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        tag: my-awesome-worker-2
