@@ -7,3 +7,5 @@
     ```
 
 2. Enter the [demo page](http://localhost:3000)
+
+3. Follow instruction(s)

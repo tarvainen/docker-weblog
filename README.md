@@ -1,6 +1,6 @@
 # Docker WebLog
 
-Send your `docker logs` to your web browser!
+Send your `docker logs` to your web browser console!
 
 # Usage
 
@@ -35,8 +35,11 @@ services:
 or using the `docker run`
 
 ```
-docker run  --log-driver gelf –-log-opt gelf-address=udp://localhost:12201 ubuntu:latest echo hello world
+docker run --log-driver=gelf --log-opt gelf-address=udp://localhost:12201 ubuntu echo hello world
 ```
+
+# Development purposes only!
+Note that using this logging driver will expose docker logs to the client side application. **Very likely** that is not something you want.
 
 # License
 
